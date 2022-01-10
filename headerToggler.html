@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>headerToggler</title>
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="shortcut icon" href="./images/headerToggler.jpg" type="image/jpg">
+</head>
+<body>
+    <!-- header tags -->
+    <header>
+        <div id="toggler" class="toggle">
+            <div id="togglerChild"></div>
+            <div id="togglerChild"></div>
+            <div id="togglerChild"></div>
+        </div>
+            <nav>
+                <div class="headerLogo">
+                    <a href="#top"><h2>LOGO</h2></a>
+                </div>
+                <div class="navItems">
+                    <div id="item" class="items">
+                        <div id="close" class="closer">
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#services">Gellary</a></li>
+                            <li><a href="#team">Our Team</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+            </nav>
+
+    </header>
+    <div class="slider">
+        <div class="slider_items">
+            <h2 >American Falls Reservoir</h2>
+            <p> The best travel place in USA.
+                The height of the American Falls  <br>ranges between 70 to 110 feet 
+            </p>
+            <a href="#more">See More</a>
+        </div>
+
+        
+    </div>
+    <script>
+       //selector
+        const close = document.getElementById('close')
+        const item = document.getElementById('item')
+        const togle = document.getElementById('toggler')
+        //active function 
+        function actives(){
+            item.classList.add('active') 
+            // item.classList.remove('close')
+        }
+        //close function
+        function closes(){
+            item.classList.remove('active') 
+        }
+        //docment click then hide the menu bar 
+        document.onclick = function(e) {
+            if (e.target.id !== 'item' && e.target.id !== 'close' && e.target.id !== 'toggler' && e.target.id !== 'togglerChild') {
+                item.classList.remove('active') 
+            }
+        } 
+        // eventListener     
+        togle.addEventListener('click', actives)
+        close.addEventListener('click', closes)
+        
+        
+    </script>
+    
+</body>
+</html>
